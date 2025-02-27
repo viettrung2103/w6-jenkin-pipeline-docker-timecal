@@ -1,11 +1,13 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') {
+    stages{
+        stage('checking'){
             steps {
-                git branch: 'master', url: 'https://github.com/viettrung2103/w6-jenkin-pipeline-docker-timecal.git'
+                git branch: 'master', url: 'https://github.com/ADirin/lectdemo_en.git'
+
             }
         }
+
         stage('Build') {
             steps {
                 bat 'mvn clean install'
