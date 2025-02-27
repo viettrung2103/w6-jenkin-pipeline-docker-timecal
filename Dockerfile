@@ -1,11 +1,12 @@
-
-LABEL authors="viett"
+#FROM openjdk:21
 
 FROM maven:latest
+LABEL authors="viett"
+
 
 WORKDIR /app
 
-COPY  POM.xml /app
+COPY  pom.xml /app
 
 COPY . /app
 
