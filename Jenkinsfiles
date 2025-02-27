@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('CHecking') {
+            steps {
+                git branch: 'master', URL: 'https://github.com/viettrung2103/w6-jenkin-pipeline-docker-timecal.git'
+            }
+        }
+        stage(Build) {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy stage completed'
+            }
+        }
+    }
+}
